@@ -39,13 +39,17 @@ abstract class AbstractDatabaseConnection implements IDatabaseConnection {
 
     $className = 'padroes\criacao\\factory\\' . ucwords($adapter) . 'DatabaseConnection';
 
-    try {
+    try 
+    {
       $connection = new $className($username, $password, $dbname, $host, $port);
-    } catch (Exception $e) {
+    } 
+    catch (Exception $e)
+    {
       echo $e->getTraceAsString();
     }
 
     return $connection;
   }
-  
+
+
 }
