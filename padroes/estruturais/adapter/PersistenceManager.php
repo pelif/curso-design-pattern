@@ -10,12 +10,14 @@ class PersistenceManager
       $dm = new DocumentManager();
       $document = $entity->toDocument();
       $dm->persist($document);
+
     }
     if ($entity->getStorageStructure() == AbstractEntity::RELATIONAL)
     {
       $rm = new RecordManager();
       $record = $entity->toRecord();
       $rm->save($record);
+      
     }
   }
 }

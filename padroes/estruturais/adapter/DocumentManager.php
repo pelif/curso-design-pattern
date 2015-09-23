@@ -5,6 +5,6 @@ class DocumentManager
 {
   public function persist(array $document)
   {
-  	var_dump($this);
+  	
   }
 }
