@@ -5,7 +5,13 @@ use padroes\criacao\factory\IDatabaseConnection;
 
 abstract class AbstractDatabaseConnection implements IDatabaseConnection {
 
-  public function __construct($username = null, $password = null, $dbname = null, $host = null, $port = null){
+  public function __construct(
+    $username = null,
+    $password = null,
+    $dbname = null,
+    $host = null,
+    $port = null) {
+
     if ($username && $password && $dbname)
       $this->connect($username, $password, $dbname, $host);
   }
@@ -39,10 +45,10 @@ abstract class AbstractDatabaseConnection implements IDatabaseConnection {
 
     $className = 'padroes\criacao\\factory\\' . ucwords($adapter) . 'DatabaseConnection';
 
-    try 
+    try
     {
       $connection = new $className($username, $password, $dbname, $host, $port);
-    } 
+    }
     catch (Exception $e)
     {
       echo $e->getTraceAsString();
