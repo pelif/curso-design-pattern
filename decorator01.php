@@ -9,6 +9,4 @@ use padroes\estruturais\decorator\Carta;
 
 Escritor::redigir();
 
-
-
 ?>

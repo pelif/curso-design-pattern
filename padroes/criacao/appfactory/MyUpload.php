@@ -43,8 +43,18 @@ abstract class MyUpload implements IMyUpload
       }
 
       $obj = null;
+      $pos = '';
 
-      $className = 'padroes\criacao\\appfactory\\Upload' . strtoupper(substr($type, -3));
+      if(substr($type, -3) == 'peg' || substr($type, -3) == 'PEG')
+      {
+        $pos = "jpeg";
+      }
+      else
+      {
+        $pos = substr($type, -3);
+      }
+
+      $className = 'padroes\criacao\\appfactory\\Upload' . strtoupper($pos);
 
       try {
         $obj = new $className();
