@@ -14,7 +14,7 @@ class Button implements IElement
             $this->addProperties($properties);
         }
     }
-
+ 
     public function mount()
     {
         printf("%s", $this->tag . " /><br>");

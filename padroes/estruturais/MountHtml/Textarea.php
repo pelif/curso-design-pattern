@@ -1,13 +1,14 @@
 <?php
 namespace padroes\estruturais\MountHtml;
 
-class Text implements IElement
+class Textarea implements IElement
 {
     private $tag = null;
     private $properties;
 
-    public function __construct(array $properties = null) {
-        $this->tag = "<input type='text'";
+    public function __construct(array $properties = null)
+    {
+        $this->tag = "<textarea ";
         if(!is_null($properties))
         {
             $this->addProperties($properties);
@@ -16,29 +17,28 @@ class Text implements IElement
 
     public function mount()
     {
-        printf("%s", $this->tag . " /><br>");
+        printf("%s", $this->tag . " /></textarea><br>");
     }
 
-    public function addProperties(array $propertie)
+    public function addProperties(array $properties)
     {
-        if (is_array($propertie))
-        {
-            foreach($propertie as $attr => $value)
-            {
-                if($attr == 'label')
-                {
+        if(is_array($properties)) {
+            foreach($properties as $attr => $value) {
+                if($attr == 'label') {
                     $this->tag = "<label>{$value}</label><br>" . $this->tag;
-                }
-                else
-                {
+                } else {
                     $this->properties.= " " . $attr . "='" . $value . "' ";
                 }
             }
         }
-        if(strlen($this->properties) > 0)
-        {
+
+        if(strlen($this->properties) > 0) {
             $this->tag.= $this->properties;
         }
     }
 
+
 }
+
+
+?>
