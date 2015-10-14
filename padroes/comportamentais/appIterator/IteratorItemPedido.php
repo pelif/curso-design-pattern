@@ -45,4 +45,5 @@ class IteratorItemPedido implements Iterator
     {
         $this->key = 0;
     }
+    
 }

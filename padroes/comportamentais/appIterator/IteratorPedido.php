@@ -11,12 +11,12 @@ class IteratorPedido
 
         for($i=0; $i<5; $i++)
         {
-            $pedidos->add(new ItemPedido);
+            $pedidos->add(new ItemPedido());
         }
 
         foreach($pedidos as $pedido)
         {
-            $pedido->imprimePrecoFinal();            
+            $pedido->imprimePrecoFinal();
         }
     }
 }
