@@ -25,4 +25,5 @@ class Registry
   {
     return self::$instance->registry[$key];
   }
+  
 }

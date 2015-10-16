@@ -32,4 +32,5 @@ class Registry
     {
         return self::$singleton->registry[$key];
     }
+    
 }
